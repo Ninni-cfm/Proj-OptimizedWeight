@@ -1,0 +1,143 @@
+/*****************************************************************************
+    Variable definitions on root
+*/
+:root {
+    /* define some variables for used colors */
+    --radiant1: #b0c8e0;
+    --radiant2: #758595;
+
+    --shadowColor: #fff;
+
+    --textColor: #263c55;
+    --inputBackground: #e5eef7;
+
+    --buttonColor: #fff;
+    --buttonShadow: #fff;
+    --buttonBackground: #9c8500;
+
+    /* set a unique font-size for all browsers */
+    font-size: 22px;
+}
+
+/*****************************************************************************
+    Hard reset, no margins and paddings for all elements
+*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*****************************************************************************
+    General font styling, done for the body element to inherit style to
+    child elements
+*/
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    color: var(--textColor);
+}
+
+/*****************************************************************************
+    setup the form
+*/
+form {
+    /* use of linear-gradient with variables will cause an error for the 
+    linear-gradient and warnings for all variable definitions! */
+    /* background: linear-gradient(var(--radiant1), var(--radiant2)); */
+
+    /* need to use linear-gradient with color values (explanation above) */
+    background: linear-gradient(#b0c8e0, #758595);
+
+    width: 21rem;
+    margin: 5rem auto 0;
+    padding: 2rem;
+    border-radius: 0.5rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    text-shadow: 0 0 0.2rem var(--shadowColor);
+    text-align: center;
+}
+
+/*****************************************************************************
+    same size for all text except headlines
+*/
+label,
+span,
+p {
+    text-shadow: 0px 0px 2px var(--shadowColor);
+    padding-top: 1rem;
+    font-size: 1.3rem;
+}
+
+/*****************************************************************************
+    basic styling for input elements
+*/
+input {
+    background: var(--inputBackground);
+    border-radius: 0.5rem;
+
+    margin: 0.75rem 0;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+
+    /* remove border and outline */
+    border: none;
+    outline: none;
+
+    /* delay all effects */
+    transition: all 0.3s;
+}
+/*  some effects on the number input fields */
+input[type="number"]:hover,
+input[type="number"]:focus {
+    box-shadow: 0 0 0.5rem var(--textColor);
+}
+
+/* Body type selection */
+div {
+    /* use display flex to align items on the same line*/
+    display: flex;
+    align-items: center;
+}
+/* put some space aside the radio buttons and enlarge them */
+input[type="radio"] {
+    margin-left: 1.5rem;
+    margin-right: 0.75rem;
+    transform: scale(2);
+    transition: none;
+}
+span {
+    padding-top: 0rem;
+}
+
+/*****************************************************************************
+    the button needs an extra outfit
+*/
+input[type="button"] {
+    align-self: flex-end;
+    padding: 0.5rem 1rem;
+    color: var(--buttonColor);
+    background: var(--buttonBackground);
+    box-shadow: 0 0 0.25rem var(--buttonShadow);
+}
+/* and some effects on hover or active */
+input[type="button"]:hover {
+    box-shadow: 0 0 0.5rem var(--buttonShadow);
+}
+input[type="button"]:active {
+    transform: translate(0.1rem, 0.1rem);
+    box-shadow: 0 0 0.3rem var(--buttonShadow);
+}
+
+/*****************************************************************************
+    use this class to mark input errors
+*/
+.error {
+    color: darkred;
+}
+
+/****************************************************************************/

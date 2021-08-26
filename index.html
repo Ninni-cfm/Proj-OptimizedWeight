@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <title>Idealgewichtsrechner</title>
+</head>
+
+<body>
+    <form>
+
+        <h1>Idealgewicht-Rechner</h1>
+
+        <!-- input field for body size, uses the keypress event to prevent faulty inputs -->
+        <label for="numBodySize" id="lblBodySize">Körpergröße in cm</label>
+        <input type="number" name="numBodySize" id="numBodySize" min="1"
+            onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+
+        <!-- input field for age, uses the keypress event to prevent faulty inputs -->
+        <label for="numAge" id="lblAge">Alter in Jahren</label>
+        <input type="number" name="numAge" id="numAge" min="1"
+            onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+
+        <!-- selection for body type  -->
+        <label for="rbBodyType">Körperbau</label>
+        <div>
+            <input type="radio" name="rbBodyType" id="rbBodyType" checked><span>Kräftig</span>
+            <input type="radio" name="rbBodyType"><span>Schlank</span>
+        </div>
+
+        <!-- button to start the ideal weight calculation -->
+        <input type="button" value="Berechnen" onclick="calculateIdealWeight()">
+
+        <!-- Element showing the result after calculation -->
+        <p id="result">&nbsp;</p>
+
+    </form>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
